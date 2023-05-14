@@ -38,14 +38,12 @@ function Contact(
                   placeholder="Insira seu nome aqui"
                   valueRef={inputNameRef}
                   iconId="InputUser"
-                  aria-label="User"
                 />
                 <Input
                   name="email"
                   placeholder="Insira seu email aqui"
                   valueRef={inputEmailRef}
                   iconId="InputEmail"
-                  aria-label="Email"
                 />
                 <textarea
                   ref={inputContentRef}

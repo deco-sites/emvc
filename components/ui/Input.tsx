@@ -14,6 +14,7 @@ export default function Input(
       {iconId && (
         <span class="absolute inset-y-0 left-0 flex items-center pl-2">
           <button
+            aria-label={iconId}
             type="submit"
             class="p-1 focus:outline-none focus:shadow-outline text-black w-8"
           >
