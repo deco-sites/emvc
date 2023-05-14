@@ -6,8 +6,21 @@ import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./functions/LoadGitHubRaw.ts";
 import * as $$$$0 from "./routes/_app.tsx";
-import * as $$$$$$$$0 from "./sections/Head.tsx";
-import * as $$$$$$$$1 from "./sections/GetStarted.tsx";
+import * as $$$$$0 from "./islands/Contact.tsx";
+import * as $$$$$1 from "./islands/HeaderButton.tsx";
+import * as $$$$$2 from "./islands/HeaderModals.tsx";
+import * as $$$$$3 from "./islands/SliderJS.tsx";
+import * as $$$$$$$$0 from "./sections/Banner.tsx";
+import * as $$$$$$$$1 from "./sections/BigNumbers.tsx";
+import * as $$$$$$$$2 from "./sections/Contact.tsx";
+import * as $$$$$$$$3 from "./sections/Footer.tsx";
+import * as $$$$$$$$4 from "./sections/Head.tsx";
+import * as $$$$$$$$5 from "./sections/Header.tsx";
+import * as $$$$$$$$6 from "./sections/HeroCompany.tsx";
+import * as $$$$$$$$7 from "./sections/Image.tsx";
+import * as $$$$$$$$8 from "./sections/Manifest.tsx";
+import * as $$$$$$$$9 from "./sections/Testimony.tsx";
+import * as $$$$$$$$10 from "./sections/TitleSection.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -52,12 +65,27 @@ const manifest = {
     "./routes/live/previews/[...block].tsx": $live_previews,
     "./routes/live/workbench.ts": $live_workbench,
   },
+  "islands": {
+    "./islands/Contact.tsx": $$$$$0,
+    "./islands/HeaderButton.tsx": $$$$$1,
+    "./islands/HeaderModals.tsx": $$$$$2,
+    "./islands/SliderJS.tsx": $$$$$3,
+  },
   "sections": {
     "$live/sections/PageInclude.tsx": i1$$$0,
     "$live/sections/Slot.tsx": i1$$$1,
     "$live/sections/UseSlot.tsx": i1$$$2,
-    "deco-sites/emvc/sections/GetStarted.tsx": $$$$$$$$1,
-    "deco-sites/emvc/sections/Head.tsx": $$$$$$$$0,
+    "deco-sites/emvc/sections/Banner.tsx": $$$$$$$$0,
+    "deco-sites/emvc/sections/BigNumbers.tsx": $$$$$$$$1,
+    "deco-sites/emvc/sections/Contact.tsx": $$$$$$$$2,
+    "deco-sites/emvc/sections/Footer.tsx": $$$$$$$$3,
+    "deco-sites/emvc/sections/Head.tsx": $$$$$$$$4,
+    "deco-sites/emvc/sections/Header.tsx": $$$$$$$$5,
+    "deco-sites/emvc/sections/HeroCompany.tsx": $$$$$$$$6,
+    "deco-sites/emvc/sections/Image.tsx": $$$$$$$$7,
+    "deco-sites/emvc/sections/Manifest.tsx": $$$$$$$$8,
+    "deco-sites/emvc/sections/Testimony.tsx": $$$$$$$$9,
+    "deco-sites/emvc/sections/TitleSection.tsx": $$$$$$$$10,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i1$0,
@@ -83,7 +111,6 @@ const manifest = {
     "$live/flags/audience.ts": i1$$$$$0,
     "$live/flags/everyone.ts": i1$$$$$1,
   },
-  "islands": {},
   "config": config,
   "baseUrl": import.meta.url,
 };

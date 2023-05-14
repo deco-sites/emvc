@@ -1,0 +1,29 @@
+.carousel {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none
+}
+
+.carousel-item {
+  box-sizing: content-box;
+  display: flex;
+  flex: none;
+  scroll-snap-align: start
+}
+
+.carousel-center .carousel-item {
+  scroll-snap-align: center
+}
+
+.carousel-end .carousel-item {
+  scroll-snap-align: end
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: black;
+  font-family: Inter;
+  font-weight: 600;
+}

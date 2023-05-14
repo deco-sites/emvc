@@ -12,7 +12,11 @@
           "type": "string",
           "not": {
             "enum": [
-              "deco-sites/start/functions/LoadGitHubRaw.ts",
+              "deco-sites/emvc/functions/LoadGitHubRaw.ts",
+              "./islands/Contact.tsx",
+              "./islands/HeaderButton.tsx",
+              "./islands/HeaderModals.tsx",
+              "./islands/SliderJS.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
               "$live/handlers/proxy.ts",
@@ -22,8 +26,17 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
-              "deco-sites/start/sections/GetStarted.tsx",
-              "deco-sites/start/sections/Head.tsx",
+              "deco-sites/emvc/sections/Banner.tsx",
+              "deco-sites/emvc/sections/BigNumbers.tsx",
+              "deco-sites/emvc/sections/Contact.tsx",
+              "deco-sites/emvc/sections/Footer.tsx",
+              "deco-sites/emvc/sections/Head.tsx",
+              "deco-sites/emvc/sections/Header.tsx",
+              "deco-sites/emvc/sections/HeroCompany.tsx",
+              "deco-sites/emvc/sections/Image.tsx",
+              "deco-sites/emvc/sections/Manifest.tsx",
+              "deco-sites/emvc/sections/Testimony.tsx",
+              "deco-sites/emvc/sections/TitleSection.tsx",
               "$live/matchers/MatchAlways.ts",
               "$live/matchers/MatchDate.ts",
               "$live/matchers/MatchEnvironment.ts",
@@ -39,7 +52,7 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw==@Props": {
+    "ZGVjby1zaXRlcy9lbXZjL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz@Props": {
       "type": "object",
       "properties": {
         "repo": {
@@ -63,7 +76,128 @@
         "branch",
         "path"
       ],
-      "title": "deco-sites/start/functions/LoadGitHubRaw.ts@Props"
+      "title": "deco-sites/emvc/functions/LoadGitHubRaw.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQ29udGFjdC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "title": "Address"
+        },
+        "phone": {
+          "type": "string",
+          "title": "Phone"
+        },
+        "openHour": {
+          "type": "string",
+          "title": "Open Hour"
+        },
+        "closeHour": {
+          "type": "string",
+          "title": "Close Hour"
+        },
+        "contactEmail": {
+          "type": "string",
+          "title": "Contact Email"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "iconId": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "Logo"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Vector"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronLeft"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronRight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Testimonial"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Behance"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Drible"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Twitter"
+                  },
+                  {
+                    "type": "string",
+                    "const": "InputUser"
+                  },
+                  {
+                    "type": "string",
+                    "const": "InputEmail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "LogoWithoutText"
+                  },
+                  {
+                    "type": "string",
+                    "const": "BehanceFooter"
+                  },
+                  {
+                    "type": "string",
+                    "const": "TwitterFooter"
+                  },
+                  {
+                    "type": "string",
+                    "const": "DribbleFooter"
+                  },
+                  {
+                    "type": "string",
+                    "const": "XMark"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Bars3"
+                  }
+                ],
+                "type": "string",
+                "title": "Icon Id"
+              },
+              "url": {
+                "type": "string",
+                "title": "Url"
+              }
+            },
+            "required": [
+              "iconId",
+              "url"
+            ]
+          },
+          "title": "Links"
+        }
+      },
+      "required": [
+        "address",
+        "phone",
+        "openHour",
+        "closeHour",
+        "contactEmail",
+        "links"
+      ],
+      "title": "deco-sites/emvc/components/sections/Contact.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages",
@@ -121,12 +255,30 @@
       "$ref": "#/root/handlers",
       "title": "Handler"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record": {
-      "title": "Unknown record",
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route": {
       "type": "object",
-      "additionalProperties": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
-      }
+      "properties": {
+        "pathTemplate": {
+          "type": "string",
+          "title": "Path Template"
+        },
+        "handler": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
+          "title": "Handler"
+        }
+      },
+      "required": [
+        "pathTemplate",
+        "handler"
+      ],
+      "title": "Route"
+    },
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route"
+      },
+      "title": "Route[]"
     },
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
       "type": "object",
@@ -139,7 +291,7 @@
           "title": "Base"
         },
         "routes": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         }
       },
@@ -324,21 +476,195 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Banner": {
       "type": "object",
       "properties": {
-        "enableInspectVSCode": {
+        "title": {
           "type": [
-            "boolean",
+            "string",
             "null"
           ],
-          "title": "Enable Inspect V S Code"
+          "description": "text to be rendered on top of the image",
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "text to be rendered on top of the image",
+          "title": "Subtitle"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "desktop",
+            "mobile"
+          ],
+          "title": "Image"
         }
       },
-      "required": [],
-      "title": "deco-sites/start/sections/GetStarted.tsx@Props"
+      "required": [
+        "image"
+      ],
+      "title": "Banner"
     },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "banner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Banner",
+          "title": "Banner"
+        },
+        "deskWidth": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Desk Width"
+        },
+        "deskHeight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Desk Height"
+        },
+        "mobileWidth": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Mobile Width"
+        },
+        "mobileHeight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Mobile Height"
+        }
+      },
+      "required": [
+        "banner"
+      ],
+      "title": "deco-sites/emvc/components/ui/Banner.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQmlnTnVtYmVycy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Banner",
+          "title": "Image"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "infoNumbers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "type": "string",
+                "title": "Number"
+              },
+              "title": {
+                "type": "string",
+                "title": "Title"
+              }
+            },
+            "required": [
+              "number",
+              "title"
+            ]
+          },
+          "title": "Info Numbers"
+        }
+      },
+      "required": [
+        "image",
+        "title",
+        "infoNumbers"
+      ],
+      "title": "deco-sites/emvc/components/sections/BigNumbers.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "legalText": {
+          "type": "string",
+          "title": "Legal Text"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "title": "Url"
+                    },
+                    "urlText": {
+                      "type": "string",
+                      "title": "Url Text"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "urlText"
+                  ]
+                },
+                "title": "Links"
+              }
+            },
+            "required": [
+              "title",
+              "links"
+            ]
+          },
+          "title": "Columns"
+        }
+      },
+      "required": [
+        "legalText",
+        "columns"
+      ],
+      "title": "deco-sites/emvc/components/footer/Footer.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlYWQudHN4@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -382,7 +708,249 @@
         "styleUrls",
         "themeColor"
       ],
-      "title": "deco-sites/start/sections/Head.tsx@Props"
+      "title": "deco-sites/emvc/sections/Head.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItemProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "color": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Color"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "NavItemProps"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItemProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItemProps"
+      },
+      "title": "NavItemProps[]"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@HeaderProps": {
+      "type": "object",
+      "properties": {
+        "navItems": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItemProps[]",
+          "title": "Nav Items"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/emvc/components/header/Header.tsx@HeaderProps"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "desktop otimized image",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "mobile otimized image",
+          "title": "Mobile"
+        },
+        "href": {
+          "type": "string",
+          "description": "when user clicks on the image, go to this link",
+          "title": "Href"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image's alt text",
+          "title": "Alt"
+        },
+        "widthDesktop": {
+          "type": "number",
+          "description": "width desktop",
+          "title": "Width Desktop"
+        },
+        "heightDesktop": {
+          "type": "number",
+          "description": "height desktop",
+          "title": "Height Desktop"
+        },
+        "widthMobile": {
+          "type": "number",
+          "description": "width mobile",
+          "title": "Width Mobile"
+        },
+        "heightMobile": {
+          "type": "number",
+          "description": "height mobile",
+          "title": "Height Mobile"
+        }
+      },
+      "required": [
+        "desktop",
+        "mobile",
+        "href",
+        "alt",
+        "widthDesktop",
+        "heightDesktop",
+        "widthMobile",
+        "heightMobile"
+      ],
+      "title": "IImage"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage"
+      },
+      "title": "IImage[]"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQ29tcGFueS50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage[]",
+          "title": "Images"
+        }
+      },
+      "required": [
+        "images"
+      ],
+      "title": "deco-sites/emvc/components/sections/Company.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage",
+          "title": "Image"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Preload"
+        },
+        "className": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Class Name"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/emvc/components/ui/Image.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvTWFuaWZlc3QudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage",
+          "title": "Image"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "content": {
+          "type": "string",
+          "title": "Content"
+        },
+        "manifestUrl": {
+          "type": "string",
+          "title": "Manifest Url"
+        },
+        "textButton": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Text Button"
+        }
+      },
+      "required": [
+        "image",
+        "title",
+        "content",
+        "manifestUrl"
+      ],
+      "title": "deco-sites/emvc/components/sections/Manifest.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvVGVzdGltb255LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "id": {
+          "type": "string",
+          "title": "Id"
+        },
+        "testimonials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@IImage",
+                "title": "Image"
+              },
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "subtitle": {
+                "type": "string",
+                "title": "Subtitle"
+              },
+              "content": {
+                "type": "string",
+                "title": "Content"
+              }
+            },
+            "required": [
+              "image",
+              "title",
+              "subtitle",
+              "content"
+            ]
+          },
+          "title": "Testimonials"
+        }
+      },
+      "required": [
+        "title",
+        "id",
+        "testimonials"
+      ],
+      "title": "deco-sites/emvc/components/sections/Testimony.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvVGl0bGVTZWN0aW9uLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "banner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Banner",
+          "title": "Banner"
+        }
+      },
+      "required": [
+        "banner"
+      ],
+      "title": "deco-sites/emvc/components/sections/TitleSection.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
       "type": "object",
@@ -537,6 +1105,31 @@
       "required": [],
       "title": "deco-cx/live/matchers/MatchUserAgent.ts@Props"
     },
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string",
+          "title": "Use"
+        },
+        "insteadOf": {
+          "type": "string",
+          "title": "Instead Of"
+        }
+      },
+      "required": [
+        "use",
+        "insteadOf"
+      ],
+      "title": "Override"
+    },
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override"
+      },
+      "title": "Override[]"
+    },
     "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
       "type": "object",
       "properties": {
@@ -549,21 +1142,17 @@
           "title": "Name"
         },
         "routes": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         },
         "overrides": {
-          "title": "Overrides",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
+          "title": "Overrides"
         }
       },
       "required": [
         "matcher",
-        "name",
-        "routes"
+        "name"
       ],
       "title": "deco-cx/live/flags/audience.ts@Audience"
     },
@@ -571,27 +1160,24 @@
       "type": "object",
       "properties": {
         "routes": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         },
         "overrides": {
-          "title": "Overrides",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
+          "title": "Overrides"
         }
       },
       "required": [],
       "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
     },
-    "ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw==": {
+    "ZGVjby1zaXRlcy9lbXZjL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz": {
       "title": "GitHub Raw Loader",
       "description": "Grabs data from a GitHub repo",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz@Props"
         }
       ],
       "required": [
@@ -601,14 +1187,84 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/start/functions/LoadGitHubRaw.ts"
+            "deco-sites/emvc/functions/LoadGitHubRaw.ts"
           ],
-          "default": "deco-sites/start/functions/LoadGitHubRaw.ts"
+          "default": "deco-sites/emvc/functions/LoadGitHubRaw.ts"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0NvbnRhY3QudHN4": {
+      "title": "./islands/Contact.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQ29udGFjdC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Contact.tsx"
+          ],
+          "default": "./islands/Contact.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
+      "title": "./islands/HeaderButton.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeaderButton.tsx"
+          ],
+          "default": "./islands/HeaderButton.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
+      "title": "./islands/HeaderModals.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeaderModals.tsx"
+          ],
+          "default": "./islands/HeaderModals.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
+      "title": "./islands/SliderJS.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SliderJS.tsx"
+          ],
+          "default": "./islands/SliderJS.tsx"
         }
       }
     },
     "JGxpdmUvaGFuZGxlcnMvZGV2UGFnZS50cw==": {
-      "title": "$live/handlers/devPage.ts",
+      "title": "Private Fresh Page",
+      "description": "Useful for pages under development.",
       "type": "object",
       "allOf": [
         {
@@ -629,7 +1285,8 @@
       }
     },
     "JGxpdmUvaGFuZGxlcnMvZnJlc2gudHM=": {
-      "title": "$live/handlers/fresh.ts",
+      "title": "Fresh Page",
+      "description": "Renders a fresh page.",
       "type": "object",
       "allOf": [
         {
@@ -650,7 +1307,8 @@
       }
     },
     "JGxpdmUvaGFuZGxlcnMvcHJveHkudHM=": {
-      "title": "$live/handlers/proxy.ts",
+      "title": "Proxy Handler",
+      "description": "Proxies request to the target url.",
       "type": "object",
       "allOf": [
         {
@@ -692,7 +1350,8 @@
       }
     },
     "JGxpdmUvaGFuZGxlcnMvcm91dGVzU2VsZWN0aW9uLnRz": {
-      "title": "$live/handlers/routesSelection.ts",
+      "title": "Routes Selection",
+      "description": "Select routes based on the target audience.",
       "type": "object",
       "allOf": [
         {
@@ -796,12 +1455,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA==": {
-      "title": "deco-sites/start/sections/GetStarted.tsx",
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0Jhbm5lci50c3g=": {
+      "title": "deco-sites/emvc/sections/Banner.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Props"
         }
       ],
       "required": [
@@ -811,18 +1470,18 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/start/sections/GetStarted.tsx"
+            "deco-sites/emvc/sections/Banner.tsx"
           ],
-          "default": "deco-sites/start/sections/GetStarted.tsx"
+          "default": "deco-sites/emvc/sections/Banner.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA==": {
-      "title": "deco-sites/start/sections/Head.tsx",
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0JpZ051bWJlcnMudHN4": {
+      "title": "deco-sites/emvc/sections/BigNumbers.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQmlnTnVtYmVycy50c3g=@Props"
         }
       ],
       "required": [
@@ -832,9 +1491,198 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/start/sections/Head.tsx"
+            "deco-sites/emvc/sections/BigNumbers.tsx"
           ],
-          "default": "deco-sites/start/sections/Head.tsx"
+          "default": "deco-sites/emvc/sections/BigNumbers.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0NvbnRhY3QudHN4": {
+      "title": "deco-sites/emvc/sections/Contact.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQ29udGFjdC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Contact.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Contact.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0Zvb3Rlci50c3g=": {
+      "title": "deco-sites/emvc/sections/Footer.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Footer.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Footer.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlYWQudHN4": {
+      "title": "deco-sites/emvc/sections/Head.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlYWQudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Head.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Head.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlYWRlci50c3g=": {
+      "title": "deco-sites/emvc/sections/Header.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@HeaderProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Header.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Header.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlcm9Db21wYW55LnRzeA==": {
+      "title": "deco-sites/emvc/sections/HeroCompany.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvQ29tcGFueS50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/HeroCompany.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/HeroCompany.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0ltYWdlLnRzeA==": {
+      "title": "deco-sites/emvc/sections/Image.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvSW1hZ2UudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Image.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Image.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL01hbmlmZXN0LnRzeA==": {
+      "title": "deco-sites/emvc/sections/Manifest.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvTWFuaWZlc3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Manifest.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Manifest.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL1Rlc3RpbW9ueS50c3g=": {
+      "title": "deco-sites/emvc/sections/Testimony.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvVGVzdGltb255LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/Testimony.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/Testimony.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL1RpdGxlU2VjdGlvbi50c3g=": {
+      "title": "deco-sites/emvc/sections/TitleSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvc2VjdGlvbnMvVGl0bGVTZWN0aW9uLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/emvc/sections/TitleSection.tsx"
+          ],
+          "default": "deco-sites/emvc/sections/TitleSection.tsx"
         }
       }
     },
@@ -1002,7 +1850,8 @@
       }
     },
     "JGxpdmUvZmxhZ3MvYXVkaWVuY2UudHM=": {
-      "title": "$live/flags/audience.ts",
+      "title": "Audience",
+      "description": "Select routes based on the matched audience.",
       "type": "object",
       "allOf": [
         {
@@ -1023,7 +1872,8 @@
       }
     },
     "JGxpdmUvZmxhZ3MvZXZlcnlvbmUudHM=": {
-      "title": "$live/flags/everyone.ts",
+      "title": "Audience Everyone",
+      "description": "Always match regardless of the current user",
       "type": "object",
       "allOf": [
         {
@@ -1085,7 +1935,27 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz"
+        }
+      ]
+    },
+    "islands": {
+      "title": "islands",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0NvbnRhY3QudHN4"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
         }
       ]
     },
@@ -1139,10 +2009,37 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0Jhbm5lci50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0JpZ051bWJlcnMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0NvbnRhY3QudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0Zvb3Rlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlYWQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlYWRlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0hlcm9Db21wYW55LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL0ltYWdlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL01hbmlmZXN0LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL1Rlc3RpbW9ueS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL3NlY3Rpb25zL1RpdGxlU2VjdGlvbi50c3g="
         }
       ]
     },
@@ -1233,6 +2130,9 @@
         "anyOf": [
           {
             "$ref": "#/root/functions"
+          },
+          {
+            "$ref": "#/root/islands"
           },
           {
             "$ref": "#/root/handlers"
