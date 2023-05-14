@@ -28,9 +28,9 @@ function Contact(
         <div class="grid grid-cols-1 md:grid-cols-custom-grid-manifest gap-8 md:gap-[100px] md:py-32 md:px-20">
           <div class="flex flex-col justify-between">
             <div>
-              <h4 class="font-sora font-bold text-5xl text-gray-500 mb-9">
+              <h5 class="font-sora font-bold text-5xl text-gray-500 mb-9">
                 Entre em contato
-              </h4>
+              </h5>
 
               <form class="flex flex-col gap-6">
                 <Input
