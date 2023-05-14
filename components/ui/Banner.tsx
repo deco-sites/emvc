@@ -58,7 +58,7 @@ function BannerUI(
           media="(min-width: 767px)"
         />
         <img
-          class={`w-screen h-[${image.heightDesktop}px] object-fill`}
+          class={`w-screen object-fill`}
           src={image.desktop}
           alt={image.alt}
         />
