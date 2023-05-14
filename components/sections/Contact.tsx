@@ -11,6 +11,7 @@ export interface Props {
   links: {
     iconId: AvailableIcons;
     url: string;
+    title: string;
   }[];
 }
 
@@ -37,12 +38,14 @@ function Contact(
                   placeholder="Insira seu nome aqui"
                   valueRef={inputNameRef}
                   iconId="InputUser"
+                  aria-label="User"
                 />
                 <Input
                   name="email"
                   placeholder="Insira seu email aqui"
                   valueRef={inputEmailRef}
                   iconId="InputEmail"
+                  aria-label="Email"
                 />
                 <textarea
                   ref={inputContentRef}
@@ -92,7 +95,7 @@ function Contact(
 
               <div class="flex gap-12 items-center">
                 {links?.map((link) => (
-                  <a href={link.url} key={link.iconId}>
+                  <a href={link.url} key={link.iconId} title={link.title}>
                     <Icon
                       id={link.iconId}
                       width={48}

@@ -13,27 +13,31 @@ export interface Banner {
     mobile: LiveImage;
     /** @description image alt text */
     alt?: string;
+    /** @description width desktop */
+    widthDesktop: number;
+    /** @description height desktop */
+    heightDesktop: number;
+    /** @description width mobile */
+    widthMobile: number;
+    /** @description height mobile */
+    heightMobile: number;
   };
 }
 
 export interface Props {
   banner: Banner;
-  deskWidth?: number;
-  deskHeight?: number;
-  mobileWidth?: number;
-  mobileHeight?: number;
 }
 
 function BannerUI(
   {
     banner,
-    deskHeight = 560,
-    deskWidth = 1280,
-    mobileHeight = 360,
-    mobileWidth = 360,
   }: Props,
 ) {
-  const { title, subtitle, image } = banner;
+  const {
+    title,
+    subtitle,
+    image,
+  } = banner;
 
   return (
     <div class="grid grid-cols-1 grid-rows-1">
@@ -43,20 +47,20 @@ function BannerUI(
       >
         <Source
           src={image.mobile}
-          width={mobileWidth}
-          height={mobileHeight}
+          width={image.widthMobile}
+          height={image.heightMobile}
           media="(max-width: 767px)"
         />
         <Source
           src={image.desktop}
-          width={deskWidth}
-          height={deskHeight}
+          width={image.widthDesktop}
+          height={image.heightDesktop}
           media="(min-width: 767px)"
         />
         <img
-          class={`w-screen h-[${deskHeight}px] object-fill`}
+          class={`w-screen h-[${image.heightDesktop}px] object-fill`}
           src={image.desktop}
-          alt={image.alt ?? title}
+          alt={image.alt}
         />
       </Picture>
 

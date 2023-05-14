@@ -179,11 +179,16 @@
               "url": {
                 "type": "string",
                 "title": "Url"
+              },
+              "title": {
+                "type": "string",
+                "title": "Title"
               }
             },
             "required": [
               "iconId",
-              "url"
+              "url",
+              "title"
             ]
           },
           "title": "Links"
@@ -517,11 +522,31 @@
                 "null"
               ],
               "title": "Alt"
+            },
+            "widthDesktop": {
+              "type": "number",
+              "title": "Width Desktop"
+            },
+            "heightDesktop": {
+              "type": "number",
+              "title": "Height Desktop"
+            },
+            "widthMobile": {
+              "type": "number",
+              "title": "Width Mobile"
+            },
+            "heightMobile": {
+              "type": "number",
+              "title": "Height Mobile"
             }
           },
           "required": [
             "desktop",
-            "mobile"
+            "mobile",
+            "widthDesktop",
+            "heightDesktop",
+            "widthMobile",
+            "heightMobile"
           ],
           "title": "Image"
         }
@@ -537,34 +562,6 @@
         "banner": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9lbXZjL2NvbXBvbmVudHMvdWkvQmFubmVyLnRzeA==@Banner",
           "title": "Banner"
-        },
-        "deskWidth": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Desk Width"
-        },
-        "deskHeight": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Desk Height"
-        },
-        "mobileWidth": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Mobile Width"
-        },
-        "mobileHeight": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Mobile Height"
         }
       },
       "required": [

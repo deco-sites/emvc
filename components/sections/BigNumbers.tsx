@@ -15,7 +15,7 @@ export default function BigNumbers({ image, title, infoNumbers }: Props) {
   return (
     <section>
       <div class="relative flex justify-center ">
-        <BannerUI banner={image} deskHeight={584} />
+        <BannerUI banner={image} />
 
         <div class="absolute w-full flex flex-col items-center top-14 md:top-20 px-4 md:px-0">
           <p class="font-sora font-bold text-gray-400 text-[40px] md:text-[50px] text-white mb-16">
