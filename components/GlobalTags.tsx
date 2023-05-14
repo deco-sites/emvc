@@ -16,31 +16,31 @@ function GlobalTags() {
           }
           @font-face {
             font-family: 'Inter';
-            src: url(${asset("/fonts/Inter-SemiBold.ttf")}) format('ttf');
+            src: url(${asset("/fonts/Inter-SemiBold.woff")}) format('woff');
             font-weight: 600;
             font-style: normal;
           }
           @font-face {
             font-family: 'Inter';
-            src: url(${asset("/fonts/Inter-Regular.ttf")}) format('ttf');
+            src: url(${asset("/fonts/Inter-Regular.woff")}) format('woff');
             font-weight: 400;
             font-style: normal;
           }
           @font-face {
             font-family: 'Sora';
-            src: url(${asset("/fonts/Sora-Regular.ttf")}) format('ttf');
+            src: url(${asset("/fonts/Sora-Regular.woff2")}) format('woff2');
             font-weight: 400;
             font-style: normal;
           }
           @font-face {
             font-family: 'Sora';
-            src: url(${asset("/fonts/Sora-Bold.ttf")}) format('ttf');
+            src: url(${asset("/fonts/Sora-Bold.woff2")}) format('woff2');
             font-weight: 700;
             font-style: normal;
           }
           @font-face {
             font-family: 'Sora';
-            src: url(${asset("/fonts/Sora-ExtraBold.ttf")}) format('ttf');
+            src: url(${asset("/fonts/Sora-ExtraBold.woff2")}) format('woff2');
             font-weight: 800;
             font-style: normal;
           }
